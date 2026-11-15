@@ -134,6 +134,28 @@ h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:
   .stat{border-right:0;border-bottom:1px solid var(--line)}
   h1{font-size:42px}
 }
+
+/* ── Contenido heredado del proyecto original, en clave sobria ── */
+.rich{max-width:78ch}
+.rich p{margin:0 0 14px;color:#c3d4da}
+.rich h3{margin:26px 0 10px;font-size:19px;letter-spacing:-.02em}
+.rich h4{margin:22px 0 8px;font-size:15px;letter-spacing:-.01em}
+.rich ul,.rich ol{margin:0 0 16px;padding-left:22px;color:#c3d4da}
+.rich li{margin:0 0 6px}
+.rich figure{margin:22px 0;border:1px solid var(--line);border-radius:16px;padding:10px;background:rgba(11,34,43,.5)}
+.rich figure img{width:100%;display:block;border-radius:10px}
+.rich figcaption{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:9px;line-height:1.5}
+.rich .table-wrap{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:12px}
+.rich table{border-collapse:collapse;width:100%;font-size:13.5px}
+.rich th,.rich td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.rich th{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:rgba(11,34,43,.6)}
+.rich tr:last-child td{border-bottom:0}
+.rich pre{margin:18px 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:#04141a;overflow-x:auto;font-family:var(--mono);font-size:12px;line-height:1.6;color:#cfe3e8}
+.rich code{font-family:var(--mono);font-size:.92em}
+.rich .note{margin:18px 0;padding:13px 16px;border-left:2px solid var(--accent);background:rgba(42,157,143,.07);color:#c3d4da;font-size:14px}
+.rich .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0}
+.rich .card-grid .card{margin:0}
+
 </style>
 <link rel="stylesheet" href="assets/community.css?v=1">
 </head>
@@ -202,34 +224,44 @@ h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:
   <a href="https://github.com/jmadasme/teleasistencia/tree/main/versions/teleasistencia" target="_blank" rel="noopener">Ver carpeta <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </article></div>
 </div></section>
-
-<section class="section tight"><div class="wrap">
-  <div class="section-head reveal"><div class="kicker">03 — Cómo se usa</div><h2>De la carpeta a la práctica.</h2></div>
-  <div class="timeline"><div class="step reveal"><div class="step-n">01</div><h4>Desplegá el servidor</h4><p>Seguí la guía de VPS de la versión 1.3.</p></div><div class="step reveal"><div class="step-n">02</div><h4>Compilá la app</h4><p>Android Studio con el SDK declarado en el proyecto.</p></div><div class="step reveal"><div class="step-n">03</div><h4>Emparejá por QR</h4><p>El QR vincula el dispositivo con la sesión del servidor.</p></div><div class="step reveal"><div class="step-n">04</div><h4>Probá la llamada</h4><p>Verificá audio, reconexión y caída controlada.</p></div></div>
-</div></section>
-
-<section class="section tight"><div class="wrap">
-  <div class="section-head reveal"><div class="kicker">04 — Decisiones</div><h2>Lo que lo hace distinto</h2></div>
-  <div class="features"><div class="feature reveal"><h4>Un toque</h4><p>La acción principal no esconde menús.</p></div><div class="feature reveal"><h4>WebRTC</h4><p>Audio en tiempo real sin servicios de terceros.</p></div><div class="feature reveal"><h4>Emparejamiento QR</h4><p>Menos pasos y menos errores de configuración.</p></div><div class="feature reveal"><h4>Historial de fixes</h4><p>fix4 y fix5 documentan fallas de dispositivos reales.</p></div><div class="feature reveal"><h4>Bilingüe</h4><p>La versión 1.3 incluye español e inglés.</p></div><div class="feature reveal"><h4>Despliegue propio</h4><p>El servidor corre en un VPS, no en una nube opaca.</p></div></div>
-</div></section>
-
-<section class="section tight" id="stack"><div class="wrap">
-  <div class="section-head reveal"><div class="kicker">05 — Stack y arranque</div><h2>Con qué está construido</h2></div>
-  <div class="stack-grid">
-    <div class="reveal"><div class="chips"><span class="chip">Android</span><span class="chip">Kotlin/Java</span><span class="chip">WebRTC</span><span class="chip">Node.js</span><span class="chip">VPS</span><span class="chip">QR</span></div><div class="note"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>El servidor requiere dominio y certificados para WebRTC en producción. Las credenciales de despliegue no se incluyen. Se removieron secretos en 24 archivo(s) de esta familia.</span></div></div>
-    <div class="terminal reveal"><div class="terminal-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><pre>git clone https://github.com/jmadasme/teleasistencia.git
-cd teleasistencia/versions/teleAsistenciaV1.3
-# seguí docs/vps-deployment.md y luego abrí app/ en Android Studio</pre></div>
-  </div>
-</div></section>
-
-<section class="section tight" id="docs"><div class="wrap">
-  <div class="section-head reveal"><div class="kicker">06 — Documentación</div><h2>Para usar y para entender.</h2><p class="section-sub">Cada documento está en el repositorio, versionado junto al código.</p></div>
-  <div class="docs"><a class="doc reveal" href="https://github.com/jmadasme/teleasistencia/blob/main/docs/datasheet.md" target="_blank" rel="noopener"><span class="tag">DATASHEET</span><h4>Manual de operación</h4><p>Instalación, configuración, uso y diagnóstico.</p></a><a class="doc reveal" href="https://github.com/jmadasme/teleasistencia/blob/main/docs/developer.md" target="_blank" rel="noopener"><span class="tag">DEVELOPER</span><h4>Guía de código</h4><p>Arquitectura, módulos, contratos y extensión.</p></a><a class="doc reveal" href="https://github.com/jmadasme/teleasistencia/blob/main/docs/REFERENCES.md" target="_blank" rel="noopener"><span class="tag">REFERENCES</span><h4>Referencias</h4><p>Estándares, librerías y fuentes oficiales.</p></a><a class="doc reveal" href="https://github.com/jmadasme/teleasistencia/blob/main/docs/BITACORA.md" target="_blank" rel="noopener"><span class="tag">BITÁCORA</span><h4>Decisiones y pruebas</h4><p>Qué se intentó, qué falló y por qué se cambió.</p></a></div>
-</div></section>
-
-<section class="section tight"><div class="wrap"><div class="note reveal"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span><strong>Preservación:</strong> las versiones se copiaron sin <code>.git</code>, <code>node_modules</code>, entornos virtuales, compilados ni bases de datos. Los tokens y claves detectados fueron redactados; las plantillas <code>.example</code> se conservan. Las limitaciones conocidas están en la documentación, no escondidas.</span></div></div></section>
-
+<section class="section tight"><div class="wrap"><div class="section-head reveal"><div class="kicker">01 — La idea</div><h2>La tecnología debe desaparecer</h2><p class="section-sub">Para un adulto mayor, una app con menús es una barrera. La interfaz es un botón grande y una persona del otro lado.</p></div><div class="rich reveal"><div class="card-grid">
+<div class="card"><h3>El problema</h3><div><div></div><p>Las videollamadas tradicionales requieren desbloquear, buscar el contacto, abrir la app y aceptar. En una emergencia o para alguien con poca familiaridad tecnológica, cada paso es una oportunidad de fallar.</p></div></div>
+<div class="card"><h3>La solución</h3><div><div></div><p>Dos modos: familiar y adulto mayor. El adulto mayor escanea un QR una vez y queda vinculado. Desde entonces, un botón grande envía la alerta; la familia recibe la llamada y la app contesta automáticamente en altavoz.</p></div></div>
+</div></div></div></section>
+<section class="section"><div class="wrap"><div class="section-head reveal"><div class="kicker">02 — El recorrido</div><h2>Cómo funciona, paso a paso</h2><p class="section-sub">Vincular una vez. Después, solo un toque.</p></div><div class="rich reveal"><div class="timeline">
+<div class="step"><div class="step-n">01</div><h4>Vincular</h4><div><p>El familiar genera un QR y el adulto mayor lo escanea para asociar los dispositivos.</p></div></div>
+<div class="step"><div class="step-n">02</div><h4>Alertar</h4><div><p>El adulto mayor pulsa el botón grande; la app envía la señal al servidor.</p></div></div>
+<div class="step"><div class="step-n">03</div><h4>Llamar</h4><div><p>El servidor notifica al familiar por WebSocket/FCM y se inicia la Videollamada WebRTC.</p></div></div>
+<div class="step"><div class="step-n">04</div><h4>Contestar</h4><div><p>La app del adulto mayor acepta automáticamente y activa el altavoz.</p></div></div>
+</div></div></div></section>
+<section class="section tight"><div class="wrap"><div class="section-head reveal"><div class="kicker">03 — Bajo el capó</div><h2>Dos apps, una llamada</h2><p class="section-sub">La señalización es pequeña; el audio y el video van directo entre los teléfonos.</p></div><div class="rich reveal"><figure><img src="assets/rich/architecture.svg" alt="Arquitectura de Alerta Mayor con señalización y WebRTC P2P" loading="lazy"><figcaption>El servidor solo señaliza; el video viaja P2P entre los dispositivos.</figcaption></figure>
+<div class="card-grid">
+<div class="card"><h3>QR de vinculación</h3><div><p>Evita escribir códigos o buscar contactos: se escanea una vez.</p></div></div>
+<div class="card"><h3>WebRTC P2P</h3><div><p>El audio y el video no pasan por el servidor; solo la señalización.</p></div></div>
+<div class="card"><h3>Auto-respuesta</h3><div><p>El modo adulto mayor contesta solo y activa el altavoz.</p></div></div>
+</div></div></div></section>
+<section class="section"><div class="wrap"><div class="section-head reveal"><div class="kicker">04 — Lo que lo hace distinto</div><h2>Decisiones de ingeniería</h2><p class="section-sub">Cada decisión reduce el número de pasos para pedir ayuda.</p></div><div class="rich reveal"><div class="features">
+<div class="feature"><h3>Vinculación por QR</h3><div><p>Un paso único para asociar familiar y adulto mayor.</p></div></div>
+<div class="feature"><h3>Videollamada</h3><div><p>WebRTC con audio y video entre los dispositivos.</p></div></div>
+<div class="feature"><h3>Alertas</h3><div><p>Señalización por WebSocket y notificaciones FCM.</p></div></div>
+<div class="feature"><h3>Altavoz automático</h3><div><p>La llamada se escucha sin que el adulto mayor tenga que tocar nada.</p></div></div>
+<div class="feature"><h3>Dos modos</h3><div><p>Interfaz simplificada para el adulto mayor y panel para la familia.</p></div></div>
+<div class="feature"><h3>Bilingüe</h3><div><p>Interfaz en español e inglés.</p></div></div>
+</div></div></div></section>
+<section class="section tight"><div class="wrap"><div class="section-head reveal"><div class="kicker">05 — Diagramas</div><h2>El sistema, en dibujos</h2><p class="section-sub">Los diagramas se mantienen en el repositorio y se actualizan con el código.</p></div><div class="rich reveal"><figure><img src="assets/rich/call-flow.svg" alt="Alerta Mayor — call flow" loading="lazy"><figcaption>Call Flow</figcaption></figure>
+<figure><img src="assets/rich/deployment.svg" alt="Alerta Mayor — deployment" loading="lazy"><figcaption>Deployment</figcaption></figure>
+<figure><img src="assets/rich/qr-pairing.svg" alt="Alerta Mayor — qr pairing" loading="lazy"><figcaption>Qr Pairing</figcaption></figure></div></div></section>
+<section class="section"><div class="wrap"><div class="section-head reveal"><div class="kicker">06 — Stack y arranque</div><h2>Con qué está construido</h2><p class="section-sub">Kotlin 2.0.21, Jetpack Compose y Material 3 para Android; Node.js con WebSocket para señalización; WebRTC para el media; FCM para despertar el dispositivo.</p></div><div class="rich reveal"><p>Kotlin Jetpack Compose WebRTC Node.js WebSocket FCM Android google-services.json y local.properties no se publican: contienen credenciales y rutas locales.</p>
+<p>Alerta Mayor · build</p>
+<pre><span>$</span> ./gradlew assembleDebug
+<span>$</span> adb install -r app/build/outputs/apk/debug/app-debug.apk
+<span># Configurar el servidor de señalización en local.properties</span></pre></div></div></section>
+<section class="section tight"><div class="wrap"><div class="section-head reveal"><div class="kicker">07 — Documentación</div><h2>Todo está escrito</h2><p class="section-sub">Cada decisión, cada límite y cada comando están documentados en el repositorio. Sin folletos: lo que funciona se muestra, lo que no, también.</p></div><div class="rich reveal"><div class="card-grid">
+<a class="card" href=""><h3>La guía completa</h3><p>Modos, QR, WebRTC, FCM, build y despliegue.</p></a>
+<a class="card" href=""><h3>Manual de operación</h3><p>Instalación, vinculación, uso y resolución de problemas.</p></a>
+<a class="card" href=""><h3>Guía de código</h3><p>Compose, WebRTC, señalización y estructura.</p></a>
+<a class="card" href=""><h3>Referencias</h3><p>WebRTC, Android, Compose y FCM.</p></a>
+</div></div></div></section>
 <section class="cta"><div class="wrap"><div class="cta-box reveal">
   <div class="kicker">Siguiente paso</div><h2>¿Te animás?</h2>
   <p>Usá esta familia como base para teleasistencia. Está documentada para que puedas entenderla, ejecutarla y continuarla sin adivinar.</p>
