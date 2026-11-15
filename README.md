@@ -12,8 +12,6 @@ Cada carpeta conserva el contenido original de su etapa, sin `.git`, dependencia
 instaladas ni binarios pesados. La documentación de operación y de código está en
 [`docs/`](docs/), y el sitio del proyecto en [`docs/index.html`](docs/index.html).
 
-> **Nota de preservación:** se removieron credenciales, claves o tokens detectados en 24 archivo(s) de esta familia. Los ejemplos y plantillas seguras se conservan.
-
 ## Índice de versiones
 
 | Versión | Qué aporta | Archivos |
@@ -39,6 +37,60 @@ cd teleasistencia/versions/teleAsistenciaV1.3
 
 El servidor requiere dominio y certificados para WebRTC en producción. Las credenciales de despliegue no se incluyen.
 
+<!-- ficha -->
+## Ficha de evaluación
+
+**Madurez global: 3.7/5**
+
+| Criterio | Nota | Evidencia |
+|---|---:|---|
+| Madurez | 3/5 | Seis versiones y unas 4.175 líneas Kotlin; sigue sin tests automatizados y con versionCode desalineado. |
+| Reproducibilidad | 3/5 | Compila con Android Studio y el SDK declarado; el servidor exige dominio, TLS y claves configuradas a mano. |
+| Documentación | 5/5 | Bitácora de 571 líneas con catorce incidentes identificados, datasheet, guía de VPS y riesgos abiertos. |
+| Honestidad de límites | 5/5 | Declara seis riesgos abiertos, entre ellos servidor sin autenticación, QR sin caducidad y secretos sin cifrar. |
+| Valor demostrativo | 4/5 | Muestra el ciclo completo de una alarma real: señalización, FCM, permisos y supervivencia en segundo plano. |
+| Facilidad de despliegue | 2/5 | Exige VPS con certificados, APK firmado y configuración manual de TURN; no hay paquete listo para instalar. |
+
+Proyecto maduro en documentación y honestidad, con una app funcional pero sin tests ni autenticación de servidor. El valor está en el registro de fallos, no en un despliegue inmediato.
+
+## Lo que no funcionó
+
+### teleAsistenciaV1.1 — Cierre con doble dispose
+
+Al colgar, el botón y el evento EndCall del servidor liberaban WebRtcManager casi al mismo tiempo; el segundo dispose() abortaba el proceso con SIGABRT. Se agregó un guard de idempotencia en close() y el incidente quedó registrado como F-001 en la bitácora.
+
+### teleAsistenciaV1.2 — Modo supervisor que seguía auto-aceptando
+
+El cambio de Supervisado a Supervisor se guardaba en DataStore, pero CallCoordinator conservaba el modo anterior en memoria y seguía contestando solo. La corrección, aplicada en fix4, hace que saveMode() actualice también el coordinador en caliente, sin reiniciar la aplicación.
+
+### teleAsistenciaV1.2-fix5 — Servicio suspendido por Doze
+
+Con la pantalla apagada, el teléfono del mayor pasaba a «Sin conexión» porque Doze y las capas de ahorro de los fabricantes suspendían el proceso. Se sumaron un servicio en primer plano con wake lock, la exención de batería y guías por fabricante; la bitácora admite que en algunos modelos el autoarranque sigue siendo manual.
+
+## Preguntas típicas
+
+**¿Qué versión uso?**
+
+teleAsistenciaV1.3 es la más completa. fix4 y fix5 quedan como registro de errores resueltos.
+
+**¿Necesita Internet?**
+
+Sí, para señalización y media. El servidor es propio.
+
+**¿Funciona sin VPS?**
+
+Se puede probar en red local, pero WebRTC en producción necesita un servidor accesible.
+
+**¿Por qué hay dos líneas base?**
+
+teleasistencia es el punto de partida; las V1.x son la evolución.
+
+**¿Se incluyen claves?**
+
+No. Las claves de TURN/STUN y del VPS deben configurarse localmente.
+
+<!-- /ficha -->
+
 ## Documentación
 
 - [`docs/datasheet.md`](docs/datasheet.md) — instalación, operación y límites.
@@ -46,11 +98,11 @@ El servidor requiere dominio y certificados para WebRTC en producción. Las cred
 - [`docs/REFERENCES.md`](docs/REFERENCES.md) — estándares, librerías y fuentes.
 - [`docs/index.html`](docs/index.html) — página del proyecto (GitHub Pages).
 
-## Alcance y honestidad
+## El proyecto en detalle
 
 <div align="center">
 
-## 🆘 Alerta Mayor
+### 🆘 Alerta Mayor
 
 #### Teleasistencia para adultos mayores con un solo botón
 
