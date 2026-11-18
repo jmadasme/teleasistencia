@@ -191,12 +191,14 @@ h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:
 
 </style>
 <link rel="stylesheet" href="assets/community.css?v=1">
+<link href="rec/player.css?v=1" rel="stylesheet"/>
 </head>
 <body>
 <header class="nav"><div class="wrap nav-in">
   <a class="brand" href="/"><span class="brand-mark"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/></svg></span><span>jmadasme<span style="color:var(--accent)">.</span>portfolio</span></a>
   <nav class="nav-links">
-    <a href="#proyecto">Proyecto</a><a href="#versiones">Versiones</a><a href="#stack">Stack</a><a href="#docs">Docs</a><a href="#comunidad">Comunidad</a>
+    <a href="#proyecto">Proyecto</a><a href="#versiones">Versiones</a><a href="#stack">Stack</a><a href="#video">Video</a>
+<a href="#docs">Docs</a><a href="#comunidad">Comunidad</a>
     <a class="btn btn-ghost" style="padding:9px 15px" href="/iot/">← IoT</a>
   </nav>
 </div></header>
@@ -221,7 +223,46 @@ h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:
 
 <section class="stats"><div class="wrap stats-grid"><div class="stat"><div class="stat-num">6</div><div class="stat-label">versiones</div></div><div class="stat"><div class="stat-num">2</div><div class="stat-label">plataformas</div></div><div class="stat"><div class="stat-num">1</div><div class="stat-label">VPS</div></div><div class="stat"><div class="stat-num">0</div><div class="stat-label">apps de terceros</div></div></div></section>
 
-<section class="section tight"><div class="wrap"><div class="section-head reveal"><div class="kicker">El concepto</div><h2>Qué es y por qué existe</h2></div><div class="rich reveal"><p>Teleasistencia es una aplicación Android para personas mayores que necesitan pedir ayuda con un solo toque, acompañada de un servidor de señalización WebRTC propio. El usuario supervisado ve un botón único que inicia una videollamada en altavoz; el cuidador recibe la llamada y puede responder desde su teléfono. El vínculo entre ambos se establece escaneando un código QR, sin cuentas ni registro.</p><p>La familia reúne seis versiones que muestran el paso de un prototipo a una aplicación utilizable: la línea 1.1, las correcciones 1.2 con sus fix4 y fix5, la versión 1.3 con interfaz bilingüe y despliegue en VPS, y la carpeta original conservada como punto de partida. Importa porque documenta los problemas reales de una alarma doméstica —Doze, fabricantes que matan servicios, llamadas perdidas— y no solo la videollamada.</p></div></div></section><section class="section" id="versiones"><div class="wrap">
+<section class="section tight"><div class="wrap"><div class="section-head reveal"><div class="kicker">El concepto</div><h2>Qué es y por qué existe</h2></div><div class="rich reveal"><p>Teleasistencia es una aplicación Android para personas mayores que necesitan pedir ayuda con un solo toque, acompañada de un servidor de señalización WebRTC propio. El usuario supervisado ve un botón único que inicia una videollamada en altavoz; el cuidador recibe la llamada y puede responder desde su teléfono. El vínculo entre ambos se establece escaneando un código QR, sin cuentas ni registro.</p><p>La familia reúne seis versiones que muestran el paso de un prototipo a una aplicación utilizable: la línea 1.1, las correcciones 1.2 con sus fix4 y fix5, la versión 1.3 con interfaz bilingüe y despliegue en VPS, y la carpeta original conservada como punto de partida. Importa porque documenta los problemas reales de una alarma doméstica —Doze, fabricantes que matan servicios, llamadas perdidas— y no solo la videollamada.</p></div></div></section>
+<section class="section tight rec-section" id="video" style="--accent:#2E7DFF;--accent2:#14F195">
+<div class="wrap">
+<div class="rec-kicker">REC · VIDEO · 3:19</div>
+<h2 class="rec-h2">Teleasistencia: un botón rojo que abre una videollamada</h2>
+<p class="rec-lead">Recorrido por la app de teleasistencia: vínculo por QR, señalización, llamada WebRTC y un servicio en primer plano que mantiene la conexión viva.</p>
+<div class="rec-banner">
+<span class="rec-banner-icon">📋</span>
+<strong>Puedes copiar y pegar los comandos del video desde el video !!!</strong>
+<span>Pausá, seleccioná el texto de la terminal y copiá.</span>
+</div>
+<div class="rec-shell">
+<div class="rec-bar"><i></i><i></i><i></i><span class="rec-title">Teleasistencia: un botón rojo que abre una videollamada · asciinema</span><span class="rec-rec"><b></b>REC</span></div>
+<div class="rec-screen-wrap">
+<div class="rec-screen" id="rec-screen"></div>
+<div class="rec-poster" id="rec-poster">
+<div class="rec-kicker">ASCIINEMA · 3:19</div>
+<h3>Teleasistencia: un botón rojo que abre una videollamada</h3>
+<p>Recorrido por la app de teleasistencia: vínculo por QR, señalización, llamada WebRTC y un servicio en primer plano que mantiene la conexión viva.</p>
+<div class="rec-poster-meta">teleasistencia · código real</div>
+<button class="rec-btn rec-primary" id="rec-start" type="button">▶ Reproducir</button>
+</div>
+</div>
+<div class="rec-controls">
+<button class="rec-btn rec-primary" id="rec-play" type="button">▶ Reproducir</button>
+<button class="rec-btn" id="rec-restart" type="button">↺ Reiniciar</button>
+<input class="rec-progress" id="rec-range" type="range" min="0" max="1000" value="0" aria-label="Progreso"/>
+<span class="rec-time" id="rec-time">0:00 / 3:19</span>
+<select class="rec-speed" id="rec-speed" aria-label="Velocidad"><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select>
+<button class="rec-btn" id="rec-full" type="button" title="Pantalla completa">⛶</button>
+<button class="rec-btn" id="rec-copy" type="button">⧉ Copiar comandos</button>
+<a class="rec-download" href="rec/teleasistencia.cast" download>descargar .cast</a>
+</div>
+</div>
+<p class="rec-note">Fragmentos literales de versions/teleAsistenciaV1.3. El servidor de señalización Node vive en server/ y no se recorre en este video.</p>
+<div class="rec-chapters"><span class="rec-chip"><b>0:06</b> EL VÍNCULO</span><span class="rec-chip"><b>0:21</b> LEER EL QR</span><span class="rec-chip"><b>0:34</b> SEÑALIZACIÓN</span><span class="rec-chip"><b>0:49</b> REGISTRO Y LLAMADA</span><span class="rec-chip"><b>1:05</b> ESTADO</span><span class="rec-chip"><b>1:21</b> CONEXIÓN</span><span class="rec-chip"><b>1:36</b> EVENTOS</span><span class="rec-chip"><b>1:53</b> WEBRTC</span><span class="rec-chip"><b>2:08</b> CÁMARA</span><span class="rec-chip"><b>2:24</b> PRIMER PLANO</span><span class="rec-chip"><b>2:41</b> BOTÓN ROJO</span><span class="rec-chip"><b>2:56</b> LLAMAR</span></div>
+</div>
+</section>
+
+<section class="section" id="versiones"><div class="wrap">
   <div class="section-head reveal"><div class="kicker">02 — Versiones</div><h2>La historia, completa.</h2><p class="section-sub">Cada carpeta conserva una etapa del proyecto. No se borraron las anteriores: se pusieron en contexto.</p></div>
   <div class="versions"><article class="version reveal">
   <div class="version-top"><h3>teleAsistenciaV1.1</h3><span class="count">60 archivos</span></div>
@@ -299,5 +340,7 @@ h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:
 <script>window.PORTFOLIO_COMMUNITY={account:"jmadasme",repo:"teleasistencia",coinNamespace:"jmadasme-teleasistencia-coins-v1",faqs:[{"q": "¿Qué versión uso?", "a": "teleAsistenciaV1.3 es la más completa. fix4 y fix5 quedan como registro de errores resueltos."}, {"q": "¿Necesita Internet?", "a": "Sí, para señalización y media. El servidor es propio."}, {"q": "¿Funciona sin VPS?", "a": "Se puede probar en red local, pero WebRTC en producción necesita un servidor accesible."}, {"q": "¿Por qué hay dos líneas base?", "a": "teleasistencia es el punto de partida; las V1.x son la evolución."}, {"q": "¿Se incluyen claves?", "a": "No. Las claves de TURN/STUN y del VPS deben configurarse localmente."}]};</script>
 <script src="assets/community.js?v=2" defer></script>
 
+<script defer src="rec/teleasistencia.cast.js?v=1"></script>
+<script defer src="rec/player.js?v=1"></script>
 </body>
 </html>
